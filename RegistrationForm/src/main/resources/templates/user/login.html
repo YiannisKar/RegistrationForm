@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html 
+xmlns="http.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Sign In</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script  src="https://code.jquery.com/jquery-3.4.1.min.js"  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="alert alert-danger" role="alert" th:if="${param.error}">
+		The email or password is wrong!
+		</div>
+		<form th:action="@{/login}" method="post">
+		<h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
+		<label for="inputEmail" class="sr-only">Email</label>
+		<input type="email" id="email" class="form-control" placeholder="Email" required autofocus/>
+				<label for="inputPassword" class="sr-only">Password</label>
+				<input type="password" id="password" class="form-control" placeholder="Password" required autofocus/>
+				
+				<div class="chekbox mb-3">
+				<label>
+				<input type="checkbox" name="remember me"/>Remember Me
+				
+				</label>
+				
+				</div>
+				<button class="btn btn-lg btn-primary btn-black" type="submit">Sign In</button>
+				<div class="margin-top20 text-center">Don't have an account? <a th:href="@{/signup}">Create an account</a></div>
+		</form>
+	
+	</div>
+</body>
+</html>
